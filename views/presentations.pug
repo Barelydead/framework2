@@ -1,0 +1,37 @@
+extends layout
+
+block header
+    h1= title
+    p Welcome to #{title}
+
+
+block content
+    div.top-menu
+        ul
+            each val in ["kmom01", "kmom02", "kmom03", "kmom04", "kmom05", "kmom06", "kmom10"]
+              li 
+                a(href="#" + val)= val
+        
+        
+    div
+        <a id="kmom01"></a>
+        include:markdown-it redovisningar/kmom01.md
+        <hr>
+        <a id="kmom02"></a>
+        include:markdown-it redovisningar/kmom02.md
+        <hr>
+        <a id="kmom03"></a>
+        include:markdown-it redovisningar/kmom03.md
+        <hr>
+        <a id="kmom04"></a>
+        include:markdown-it redovisningar/kmom04.md
+        <hr>
+        <a id="kmom05"></a>
+        include:markdown-it redovisningar/kmom05.md
+        <hr>
+        <a id="kmom06"></a>
+        include:markdown-it redovisningar/kmom06.md
+        <hr>
+        <a id="kmom10"></a>
+        include:markdown-it redovisningar/kmom10.md
+        <hr>

@@ -1,0 +1,107 @@
+body,
+html {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #00b7ff;
+}
+
+
+div,
+main,
+header {
+    box-sizing: border-box;
+}
+
+
+/*
+.navbar, .footer, .main {
+    float: left;
+}
+*/
+
+.main-wrap {
+    width: 1200px;
+    margin: auto;
+}
+
+.navbar {
+    min-height: 100vh;
+    padding: 20px;
+    width: 12%;
+    background-color: salmon;
+    position: fixed;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+    padding-left: 0;
+    height: 20vh;
+}
+
+.navbar-nav li a {
+    font-size: 1.2em;
+    color: #111;
+    text-decoration: none;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.navbar-logo {
+    height: 40vh;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+.main {
+    width: 88%;
+    position: relative;
+    left: 19%;
+}
+
+.header {
+    background: #eee;
+    padding: 40px;
+}
+
+.header h1 {
+    font-size: 5em;
+    font-weight: bold;
+    margin: 0;
+    font-variant-caps: all-small-caps;
+}
+
+.content {
+    padding: 40px;
+}
+
+.top-menu {
+    margin-bottom: 75px;
+}
+
+.top-menu ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.top-menu ul a {
+    font-size: 1.3em;
+    float: left;
+    padding-right: 15px;
+}
+
+.footer {
+    margin-left: 21%;
+}

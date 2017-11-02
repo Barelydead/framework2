@@ -3,22 +3,19 @@ html
   head
     title= title
     link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
   body
     div.main-wrap
         div.navbar
             include includes/navbar.pug
-        
-        div.site-wrap
-            div.flash        
-                block flash
+                    
+        main.main
+            header.header
+                block header
+            div.content
+                block content
+                        
+        footer.footer       
+            include includes/footer.pug
             
-            main.main
-                header.header
-                    block header
-                div.content
-                    block content
-                            
-            footer.footer       
-                include includes/footer.pug
-                
                 

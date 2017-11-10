@@ -7,4 +7,28 @@ Ramverk 2
 [![Build Status](https://travis-ci.org/Barelydead/framework2.svg?branch=master)](https://travis-ci.org/Barelydead/framework2)
 
 
-Detta repo är en del av kursen ramverk2.
+This repo is a part of the bth-course framework2
+
+
+## install
+
+```
+git clone https://github.com/Barelydead/framework2.git
+```
+
+```
+cd framework2/
+```
+
+```
+npm install
+```
+
+```
+npm start
+```
+
+## test
+```
+make install test
+```

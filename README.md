@@ -10,7 +10,7 @@ Ramverk 2
 This repo is a part of the bth-course framework2
 
 
-## install
+## Install
 
 ```
 git clone https://github.com/Barelydead/framework2.git
@@ -28,7 +28,38 @@ npm install
 npm start
 ```
 
-## test
+## Test
+Mitt repo omfattas av unittest med mocha och linters eslint och stylelint.
+
 ```
-make install test
+npm test
+```
+
+Gör test i andra versioner av node
+```
+npm run docker-6
+```
+```
+npm run docker-8
+```
+```
+npm run docker-9
+```
+
+## Docker
+
+Kör flera instanser av servern på olika node-versioner.
+```
+docker-compose up -d
+```
+
+rikta webbläsaren till
+```
+http://localhost:8060
+```
+```
+http://localhost:8080
+```
+```
+http://localhost:8090
 ```

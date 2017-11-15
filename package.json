@@ -9,6 +9,9 @@
         "docker-6": "docker-compose run node6 npm test",
         "docker-8": "docker-compose run node8 npm test",
         "docker-9": "docker-compose run node9 npm test",
+        "test-scrutinizer": "nyc --all --reporter=clover mocha test/**/*.js",
+        "report-coveralls": "nyc report --reporter=text-lcov | coveralls",
+        "report-codecov": "nyc report --reporter=lcov > coverage.lcov && codecov",
         "test": "nyc --reporter=html --reporter=text mocha test/**/*.js",
         "eslint": "eslint .",
         "stylelint": "stylelint **/*.css",
@@ -32,6 +35,8 @@
         "jsonlint": "^1.6.2",
         "mocha": "^4.0.1",
         "nyc": "^11.3.0",
+        "codecov": "^3.0.0",
+        "coveralls": "^3.0.0",
         "stylelint": "^8.2.0",
         "uglify-js": "^3.1.6"
     }

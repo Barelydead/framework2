@@ -5,7 +5,9 @@ Ramverk 2
 [![Maintainability](https://api.codeclimate.com/v1/badges/2d247096c0bfb7a88f4c/maintainability)](https://codeclimate.com/github/Barelydead/framework2/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/2d247096c0bfb7a88f4c/test_coverage)](https://codeclimate.com/github/Barelydead/framework2/test_coverage)
 [![Build Status](https://travis-ci.org/Barelydead/framework2.svg?branch=master)](https://travis-ci.org/Barelydead/framework2)
-
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Barelydead/framework2/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Barelydead/framework2/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/Barelydead/framework2/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Barelydead/framework2/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/Barelydead/framework2/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Barelydead/framework2/build-status/master)
 
 This repo is a part of the bth-course framework2
 

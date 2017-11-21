@@ -1,0 +1,21 @@
+extends layout
+
+block header
+  h1= Chat
+  p En chat med socket.io
+
+
+block content
+    div.user-wrap
+        input#name-input(type="text", placeholder="enter username")
+        button#name-button-send Börja chatta
+    
+    div.chat-wrap
+        div.chat#chat-window   
+            
+        input.chat#chat-input(type="text", placeholder="Enter chat message") 
+        button.chat#chat-button-send Skicka meddelande
+
+
+    script(src="/socket.io/socket.io.js")
+    script(src="/js/chat.js")

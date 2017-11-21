@@ -26,4 +26,12 @@ router.get('/presentation', function(req, res) {
     });
 });
 
+
+/* GET about page. */
+router.get('/chat', function(req, res) {
+    res.render('chat', {
+        title: 'Chat',
+        path: 'chat'
+    });
+});
 module.exports = router;

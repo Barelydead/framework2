@@ -20,9 +20,7 @@ Så ett exempel där jag kan se nyttan i det är om man ska skapa en publik modu
 
 
 #### Hur väl lyckades du utvärdera TDD-konceptet och vilka är dina reflektioner?
-Nja, jag började uppgiften med att göra tester först men eftersom att jag inte var helt säker på vad jag ville göra för typ av app och hur allt skulle hänga ihop så blev det lurigt att skriva tester först.
-
-
+Nja, jag började uppgiften med att göra tester först men eftersom att jag inte var helt säker på vad jag ville göra för typ av app och hur allt skulle hänga ihop så blev det lurigt att skriva tester först. När jag ska skapa någonting nytt är det sällan jag har en klar bild av hur allt ska fungera vilket gör min kod ofta ändras kraftigt under arbetet. Med det arbetssättet så är det allt för tidskrävande att skriva tester innan och av den anledningen så föredrar jag nog att skriva mina tester efter. Det jag tycker är viktigt är att bestämma innan påbörjat arbete att koden ska testas så att den skrivs på ett testbart sätt.
 
 #### Berätta om tankarna kring din klient/server applikation och nämn de tekniker du använder.
 Jag vill göra ett online schack där spelare kan mötas i en lobby och sedan hoppa in i ett spel. Jag tänker mig att man ska kunna chatta med sin motspelare samt att man kan bestämma olika tidsintervall för spelet.

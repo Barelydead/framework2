@@ -8,7 +8,9 @@
     var nameBtn = document.getElementById("name-button-send");
     var username;
 
+    /* eslint-disable */
     var socket = io();
+    /* eslint-enable */
 
     nameBtn.addEventListener("click", function() {
         var chatApp = document.getElementsByClassName("chat-wrap")[0];

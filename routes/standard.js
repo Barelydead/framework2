@@ -34,4 +34,12 @@ router.get('/chat', function(req, res) {
         path: 'chat'
     });
 });
+
+/* GET about page. */
+router.get('/project', function(req, res) {
+    res.render('project', {
+        title: 'Project',
+        path: 'project'
+    });
+});
 module.exports = router;

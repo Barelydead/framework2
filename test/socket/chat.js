@@ -1,12 +1,12 @@
 // ioClient
 var ioClient = require('socket.io-client');
 
-// Start server
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io').listen(http);
-var chat = require('../../src/socket/chat');
-chat(io);
+// // Start server
+// var app = require('express')();
+// var http = require('http').Server(app);
+// var io = require('socket.io').listen(http);
+// var chat = require('../../src/socket/chat');
+// chat(io);
 
 
 var socketURL = 'http://localhost:3000';
@@ -23,13 +23,14 @@ describe("Connect to chat server", function() {
             client.emit("connected");
         });
 
-        client.on('new user',function(usersName){
-            // usersName.should.be.type('string');
-            // usersName.should.equal(chatUser1.name + " has joined.");
-            // /* If this client doesn't disconnect it will interfere
-            // with the next test */
-            client.disconnect();
-            done();
+        // Set up event listener.  This is the actual test we're running
+        client1.on('message', function(msg){
+          expect(msg).to.equal('test');
+
+          // Disconnect both client connections
+          client1.disconnect();
+          client2.disconnect();
+          done();
         });
     });
 });

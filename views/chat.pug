@@ -7,14 +7,17 @@ block header
 
 block content
     div.user-wrap
-        input#name-input(type="text", placeholder="enter username")
-        button#name-button-send Börja chatta
+        h2 Välj ett användarnamn och hoppa in!
+        input.user-input#name-input(type="text", placeholder="enter username")
+        br
+        button.user-btn#name-button-send Börja chatta
     
     div.chat-wrap
         div.chat#chat-window   
             
+        div.chat#chat-members
+            
         input.chat#chat-input(type="text", placeholder="Enter chat message") 
-        button.chat#chat-button-send Skicka meddelande
 
 
     script(src="/socket.io/socket.io.js")

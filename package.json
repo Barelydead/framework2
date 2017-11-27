@@ -12,7 +12,7 @@
         "test-scrutinizer": "nyc --all --reporter=clover mocha test/**/*.js",
         "report-coveralls": "nyc report --reporter=text-lcov | coveralls",
         "report-codecov": "nyc report --reporter=lcov > coverage.lcov && codecov",
-        "test": "nyc --reporter=html --reporter=text mocha test/**/*.js",
+        "test": "nyc --reporter=html --reporter=text mocha --exit --timeout 5000 test/**/*.js",
         "eslint": "eslint .",
         "stylelint": "stylelint **/*.css",
         "posttest": "npm run eslint && npm run stylelint"

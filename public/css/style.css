@@ -142,6 +142,7 @@ img {
     background-color: #eee;
     border: 1px soild;
     padding: 10px;
+    width: 80%;
 }
 
 
@@ -150,9 +151,34 @@ img {
 }
 
 .user-wrap {
-    background-color: #222;
     text-align: center;
-    width: 100%;
-    height: 200px;
-    padding-top: 90px;
+}
+
+.user-input {
+    width: 250px;
+    height: 2em;
+    font-size: 20px;
+}
+
+.user-btn {
+    margin-top: 10px;
+    width: 259px;
+    height: 2em;
+    font-size: 20px;
+    background: #eeaf4b;
+    border: none;
+}
+
+.chat {
+    float: left;
+}
+
+#chat-members {
+    width: 17%;
+    height: 250px;
+    background-color: #eee;
+    border-left: 1px solid #000;
+    border: 1px soild;
+    padding: 10px;
+    margin-left: 10px;
 }

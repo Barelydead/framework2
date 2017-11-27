@@ -2,9 +2,9 @@
     console.log("Socket client running");
 
     var chat = document.getElementById("chat-window");
-    var send = document.getElementById("chat-button-send");
     var input = document.getElementById("chat-input");
     var name = document.getElementById("name-input");
+    var members = document.getElementById("chat-members");
     var nameBtn = document.getElementById("name-button-send");
     var username;
 
@@ -24,23 +24,77 @@
         socket.emit("new user", username);
     });
 
-    send.addEventListener("click", function() {
-        var msg = "<span class='username'>" + username + "</span>" + ": " + input.value + "\n";
+    function sendMessage() {
+        let data = {};
 
-        socket.emit('chat message', msg);
+        data.message = input.value;
+        data.from = username;
+        data.to = "all";
+
+        console.log(data.from);
+
+        socket.emit('chat message', data);
         input.value = "";
         input.focus();
-    });
 
-    socket.on('chat message', function(msg) {
         var msgHolder = chat.appendChild(document.createElement("div"));
 
-        msgHolder.innerHTML = msg;
+        msgHolder.innerHTML = "you: " + data.message;
+    }
+
+    function sendPrivate() {
+        let data = {};
+        let to = input.value.split(" ")[0];
+
+        data.message = input.value;
+        data.from = username;
+        data.to = to.slice(1);
+
+        input.value = "";
+        input.focus();
+
+        var msgHolder = chat.appendChild(document.createElement("div"));
+
+        msgHolder.innerHTML = "you to " + data.to + ": " + data.message;
+
+        socket.emit('private message', data);
+    }
+
+    socket.on('chat message', function(data) {
+        var msgHolder = chat.appendChild(document.createElement("div"));
+
+        msgHolder.innerHTML = data.from + ": " + data.message;
     });
 
     socket.on('new user', function(username) {
         var msgHolder = chat.appendChild(document.createElement("div"));
+        var membersHolder = members.appendChild(document.createElement("div"));
 
         msgHolder.innerHTML = "User " + username + " conncted to the chat";
+        membersHolder.innerHTML = username;
     });
+
+    socket.on('recieve private', function(data) {
+        var msgHolder = chat.appendChild(document.createElement("div"));
+
+        msgHolder.innerHTML = "private " + data.from + ": " + data.message;
+        msgHolder.classList.add(data.class);
+    });
+
+    window.onkeydown = function(e) {
+        const key = e.keyCode;
+
+        switch (key) {
+            case 13:
+                if (input.value[0] === "@") {
+                    sendPrivate();
+                } else {
+                    sendMessage();
+                }
+                break;
+
+            default:
+                break;
+        }
+    };
 })();

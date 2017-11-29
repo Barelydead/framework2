@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 
 // Import Routers
 var standard = require('./routes/standard');
+var dataRoutes = require('./routes/db');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Routers
 app.use('/', standard);
+app.use('/db', dataRoutes);
 
 
 // catch 404 and forward to error handler

@@ -4,7 +4,7 @@ var db = require("../src/db/db-functions");
 
 
 /* GET home page. */
-router.get('/show', async function(req, res) { // eslint-disable-line
+router.get('/show', async function(req, res) {
 
     try {
         let item;

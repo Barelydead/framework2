@@ -20,10 +20,15 @@ var options = {
 };
 
 
-describe("test chat", function() {
+describe("test chat", function(done) {
     before(function() {
         server.listen(3000);
         chat(io);
+    });
+
+    after(function(done) {
+        server.close()
+        done();
     });
 
     it('should broadcast to all except OG', function(done){

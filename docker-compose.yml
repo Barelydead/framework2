@@ -9,3 +9,19 @@ services:
         ports:
             - 27017:27017
         command: mongod
+
+
+    express:
+        build:
+            context: .
+            dockerfile: docker/Dockerfile-alpine-node
+        volumes:
+            - ./:/app/
+            - /app/node_modules/
+        ports:
+            - 3000:3000
+        environment:
+            - DBWEBB_DSN=mongodb://mongodb:27017/drinks
+        links:
+            - mongodb
+        command: "npm start"

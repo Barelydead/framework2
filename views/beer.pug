@@ -49,7 +49,7 @@ block content
         - item[0] = "";
     div.update
         h2 Update a beer
-        form(method="POST" action="/db/edit")
+        form#update(method="POST" action="/db/edit")
             label Brand
             input(type="text" placeholder="brand" name="brand" value=item[0].brand)
             label Type
@@ -59,3 +59,5 @@ block content
             input(type="hidden" name="id" value=item[0]._id)
             input(type="submit" value="update beer")
                 
+
+    script(src="/js/form.js")

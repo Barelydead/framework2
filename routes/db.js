@@ -5,21 +5,26 @@ var db = require("../src/db/db-functions");
 
 /* GET home page. */
 router.get('/show', async function(req, res) {
-    let item;
-    const beers = await db.getCollection("beer");
 
-    if (req.query.edit_id !== "undefined") {
-        const id = req.query.edit_id;
-        item = await db.getItem("beer", id)
-        console.log(item);
+    try {
+        let item;
+        const beers = await db.getCollection("beer");
+
+        if (req.query.edit_id !== "undefined") {
+            const id = req.query.edit_id;
+            item = await db.getItem("beer", id)
+            console.log(item);
+        }
+
+        res.render('beer', {
+            title: 'Beers from a database',
+            path: 'db',
+            beer: beers,
+            item: item
+        });
+    } catch(e) {
+        console.log(e);
     }
-
-    res.render('beer', {
-        title: 'Beers from a database',
-        path: 'db',
-        beer: beers,
-        item: item
-    });
 });
 
 /* POST insert new document */

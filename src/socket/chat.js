@@ -1,7 +1,8 @@
+// const helper = require("../utils/helper");
 let users = {};
 
-function strip_tags(text) {
-    return text.replace(/(<([^>]+)>)/ig, text);
+function stripTags(text) {
+    return text.replace(/(<([^>]+)>)/ig, "");
 }
 
 module.exports = function (io) {
@@ -10,12 +11,13 @@ module.exports = function (io) {
 
         socket.on('chat message', function(data) {
             console.log("normal chat message");
-            data.message = strip_tags(data.message);
+            data.message = stripTags(data.message);
             socket.broadcast.emit('chat message', data);
         });
 
         socket.on("new user", function(username) {
-            socket.username = strip_tags(username);
+            username = stripTags(username);
+            socket.username = username;
             //save username to easli get socket.
             users[socket.username] = socket;
             io.emit("new user", username);
@@ -24,7 +26,7 @@ module.exports = function (io) {
         socket.on("private message", function(data) {
             console.log("private message");
             data.class = "private";
-            data.message = strip_tags(data.message);
+            data.message = stripTags(data.message);
 
             if (typeof users[data.to] !== "undefined") {
                 socket.to(users[data.to].id).emit("recieve private", data);

@@ -33,13 +33,14 @@ describe("test chat", function() {
 
         client.on("connect", function() {
             client2.on("connect", function() {
-                client.emit("chat message", {from: "svensson"});
+                client.emit("chat message", {from: "svensson", message: "hej"});
                 client.disconnect();
             });
         });
 
         client2.on("chat message", function(data) {
             assert.equal(data.from, "svensson");
+            assert.equal(data.message, "hej");
             client2.disconnect();
             done();
         })

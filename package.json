@@ -15,7 +15,7 @@
         "test": "nyc --reporter=html --reporter=text mocha --exit --timeout 5000 test/**/*.js",
         "eslint": "eslint .",
         "stylelint": "stylelint **/*.css",
-        "posttest": "npm run eslint && npm run stylelint"
+        "lint": "npm run eslint && npm run stylelint"
     },
     "dependencies": {
         "body-parser": "~1.17.1",

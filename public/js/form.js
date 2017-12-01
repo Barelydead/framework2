@@ -9,5 +9,5 @@
         } else {
             this.submit();
         }
-    })
+    });
 })();

@@ -12,7 +12,7 @@ module.exports = {
      * Connect to the db and recive db object
      * @return {object} database
      */
-    async connect() {
+    async connect() { // eslint-disable-line
         const db  = await mongo.connect(this.dsn);
         return db;
     },

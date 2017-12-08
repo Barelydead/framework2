@@ -12,7 +12,7 @@ module.exports = {
      * Connect to the db and recive db object
      * @return {object} database
      */
-    async connect() { 
+    async connect() {
         const db  = await mongo.connect(this.dsn);
         return db;
     },
@@ -91,6 +91,19 @@ module.exports = {
             size: size
         });
 
+        await this.close(db);
+
+        return res;
+    },
+
+
+    /**
+     * Search item
+     */
+    async searchItems(collection, searchString) {
+        const db  = await this.connect();
+        const col = await db.collection(collection);
+        const res = await col.find( { $text: { $search: /searchString/ } } ).toArray();
         await this.close(db);
 
         return res;

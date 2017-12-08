@@ -13,8 +13,13 @@ router.get('/show', async function(req, res) {
         if (req.query.edit_id !== "undefined") {
             const id = req.query.edit_id;
             item = await db.getItem("beer", id)
-            console.log(item);
         }
+
+
+        // const search = await db.searchItems("beer", req.query.search);
+        // console.log(req.query.search)
+        // console.log(search);
+
 
         res.render('beer', {
             title: 'Beers from a database',

@@ -37,17 +37,6 @@ Mitt repo omfattas av unittest med mocha och linters eslint och stylelint.
 npm test
 ```
 
-Gör test i andra versioner av node
-```
-npm run docker-6
-```
-```
-npm run docker-8
-```
-```
-npm run docker-9
-```
-
 ## Docker
 
 Kör flera instanser av servern på olika node-versioner.
@@ -55,13 +44,5 @@ Kör flera instanser av servern på olika node-versioner.
 docker-compose up -d
 ```
 
-rikta webbläsaren till
-```
-http://localhost:8060
-```
-```
-http://localhost:8080
-```
-```
-http://localhost:8090
-```
+rikta webläsaren till localhost:3000
+Docker startar en container för express och en för MongoDB

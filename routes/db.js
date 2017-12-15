@@ -5,14 +5,14 @@ var db = require("../src/db/db-functions");
 
 /* GET home page. */
 router.get('/show', async function(req, res) {
-
     try {
         let item;
         const beers = await db.getCollection("beer");
 
         if (req.query.edit_id !== "undefined") {
             const id = req.query.edit_id;
-            item = await db.getItem("beer", id)
+
+            item = await db.getItem("beer", id);
         }
 
 
@@ -27,7 +27,7 @@ router.get('/show', async function(req, res) {
             beer: beers,
             item: item
         });
-    } catch(e) {
+    } catch (e) {
         console.log(e);
     }
 });
@@ -41,7 +41,6 @@ router.post('/show', async function(req, res) {
 
     await db.insertItem("beer", brand, type, size);
     res.redirect("show");
-
 });
 
 
@@ -58,13 +57,12 @@ router.get('/delete', async function(req, res) {
 });
 
 router.post('/edit', async function(req, res) {
+    const brand = req.body.brand;
+    const type = req.body.type;
+    const size = req.body.size;
+    const id = req.body.id;
 
-    const brand = req.body.brand
-    const type = req.body.type
-    const size = req.body.size
-    const id = req.body.id
-
-    await db.updateItem("beer", id, brand, type, size)
+    await db.updateItem("beer", id, brand, type, size);
 
     // redirect to overview
     res.redirect("show");

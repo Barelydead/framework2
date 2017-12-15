@@ -18,7 +18,7 @@ module.exports = function (io) {
         socket.on("new user", function(username) {
             username = stripTags(username);
             socket.username = username;
-            
+
             //save username to easli get socket.
             users[socket.username] = socket;
             io.emit("new user", username);

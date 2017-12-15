@@ -184,16 +184,19 @@ img {
 }
 
 
-/* DATABASE STUFF*/
+/* DATABASE STUFF */
 table {
     width: 100%;
 }
 
-th, td {
+th,
+td {
     padding: 20px;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid black;
     border-collapse: collapse;
 }

@@ -1,5 +1,5 @@
 const mongo = require("mongodb").MongoClient;
-const mongoId = require("mongodb").ObjectID
+const mongoId = require("mongodb").ObjectID;
 
 /**
  * A Module contianing database functions
@@ -14,6 +14,7 @@ module.exports = {
      */
     async connect() {
         const db  = await mongo.connect(this.dsn);
+
         return db;
     },
 
@@ -100,10 +101,11 @@ module.exports = {
     /**
      * Search item
      */
-    async searchItems(collection, searchString) {
+    async searchItems(collection) {
         const db  = await this.connect();
         const col = await db.collection(collection);
         const res = await col.find( { $text: { $search: /searchString/ } } ).toArray();
+
         await this.close(db);
 
         return res;

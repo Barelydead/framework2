@@ -3,11 +3,11 @@ Moment 06
 
 
 #### Reflektera över vikten av infrastruktur för moduler för ett programmeringsspråk.
-Det känns viktigt för ett programmeringsspråk att ha en pakethanterare som är enkel att använda. Om det är enkelt att använda och det finns många moduler att hämta så slipper man skriva all kod själv och det blir både roligare och snabbare att komma igång med ett projekt.
+Det känns viktigt för ett programmeringsspråk att ha en pakethanterare som är enkel att använda. Om det är enkelt att använda och det finns många moduler att hämta så slipper man skriva all kod själv och det blir både roligare och snabbare att komma igång med ett projekt. Inget programmeringspråk är perfekt och moduler kan vara ett sätt att hjälpa till att täppa igen hål som finns i språket eller addera bättre funktionalitet.
 
 
 #### Vill du ge dig på att förklara att just npm är den tjänsten som växt snabbast av de modulerkataloger som presenteras på webbplatsen “Module Counts”?
-Jadu, 
+Jadu, jag tror att javascript är är ett av de första språk man kommer i kontakt med när man jobbar med webbutveckling. Om det är så att alla PHP-användare kan lite javascript med inte alla javascript-användare kan PHP så är det ju natuligt att det finns fler moduler på npm. Det tillsammans med att npm gör det väldigt lätt att ladda upp moduler.
 
 
 #### Reflektera över hur arbetet gick att välja, separera, publisera och sedan åter integrera module i din applikation.

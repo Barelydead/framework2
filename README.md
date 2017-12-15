@@ -33,16 +33,17 @@ npm start
 ## Test
 Mitt repo omfattas av unittest med mocha och linters eslint och stylelint.
 
-```
-npm test
-```
+Unittest: `npm test`
+Linters: `npm run lint`
+Unittest i flera versioner av node: `npm run docker-test-all`
 
 ## Docker
 
-Kör flera instanser av servern på olika node-versioner.
-```
-docker-compose up -d
-```
+##### Starta redovisa och mongoDB
+För att starta redovisa servern och mongodbservern kör `npm run docker-up` och rikta webläsaren till http://localhost:3000 för att komma åt sidan. `npm run docker-down` avslutar servrarna.
 
-rikta webläsaren till localhost:3000
-Docker startar en container för express och en för MongoDB
+##### Starta redovisa i flera versioner
+Det går att starta enbart redovisa servern i flera versioner. Detta görs med commando `npm run docker-start-v`.
+De olika versioner kommer man åt på: `http://localhost:3060`, `http://localhost:3080`, `http://localhost:3090`.
+
+För att stoppa dessa servrar `npm run docker-stop-v`

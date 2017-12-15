@@ -1,6 +1,5 @@
 version: "3"
 services:
-
     node6:
         build:
             context: .
@@ -10,8 +9,6 @@ services:
         ports:
             - "3060:3000"
         command: "npm start"
-
-
     node8:
         build:
             context: .
@@ -21,7 +18,6 @@ services:
         ports:
             - "3080:3000"
         command: "npm start"
-
     node9:
         build:
             context: .

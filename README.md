@@ -11,6 +11,9 @@ Ramverk 2
 
 This repo is a part of the bth-course framework2
 
+## Tekniker
+Denna sida är byggd med node och använder ramveket express. Chat funktionaliteten på sidan bygger på socket.io och databasen jag använt är mongoDB. Det är grunden till sidan och jag har inte använt något ramverk för frontenden. Istället så bygger jag mina vyer med vymotorn pug.
+
 
 ## Install
 
@@ -33,14 +36,14 @@ npm start
 ## Test
 Mitt repo omfattas av unittest med mocha och linters eslint och stylelint.
 
-Unittest: `npm test`
-Linters: `npm run lint`
-Unittest i flera versioner av node: `npm run docker-test-all`
+- Unittest: `npm test`
+- Linters: `npm run lint`
+- Unittest i flera versioner av node: `npm run docker-test-all`
 
 ## Docker
 
 ##### Starta redovisa och mongoDB
-För att starta redovisa servern och mongodbservern kör `npm run docker-up` och rikta webläsaren till http://localhost:3000 för att komma åt sidan. `npm run docker-down` avslutar servrarna.
+För att starta redovisa servern och mongodbservern kör `npm run start-docker` och rikta webläsaren till http://localhost:3000 för att komma åt sidan. `npm run stop-docker` avslutar servrarna.
 
 ##### Starta redovisa i flera versioner
 Det går att starta enbart redovisa servern i flera versioner. Detta görs med commando `npm run docker-start-v`.
